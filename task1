@@ -1,0 +1,67 @@
+import math
+
+func = input('Введите функцию')
+
+a = input('Введите левую границу')
+
+b = input('Введите правую границу')
+
+a = int(a)
+
+b = int(b)
+
+result = 0
+
+def _cos_(x):
+    global result
+    deterivative = (cos(x + 0.000001) - cos(x)) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+        
+def _sin_(x):
+    global result
+    deterivative = (sin(x + 0.000001) - sin(x)) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+    
+def _tg_(x):
+    global result
+    deterivative = (tg(x + 0.000001) - tg(x)) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+
+def _ctg_(x):
+    global result
+    deterivative = (ctg(x + 0.000001) - ctg(x)) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+        
+def _Parabola_(x):
+    global result
+    deterivative = ((x + 0.000001) ** 2 - x**2) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+        
+def _Line_(x):
+    global result
+    deterivative = (((x + 0.000001) * a + b) - (x * a + b)) / 0.000001
+    if 0 < deterivative < 0.001:
+        print('Функция имеет экстремум в точке =', x)
+        result += 1
+
+# Заготовка под решение
+def Extremum(func, a, b):
+    # do something awesome
+    global result
+    for x in range(a, b + 1):
+        func(x)
+    if result == 0:
+        return None
+
+
+Extremum(func, a, b)
