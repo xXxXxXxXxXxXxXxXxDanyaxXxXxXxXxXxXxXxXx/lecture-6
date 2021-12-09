@@ -30,14 +30,14 @@ def _tg_(x):
     global result
     deterivative = (tg(x + 0.000001) - tg(x)) / 0.000001
     if 0 < deterivative < 0.001:
-        print('Функция имеет экстремум в точке =', x ,"+ 2*pi*n")
+        print('Функция имеет экстремум в точке =', x ,"+ pi*n")
         result += 1
 
 def _ctg_(x):
     global result
     deterivative = (ctg(x + 0.000001) - ctg(x)) / 0.000001
     if 0 < deterivative < 0.001:
-        print('Функция имеет экстремум в точке =', x , "+ 2*pi*n")
+        print('Функция имеет экстремум в точке =', x , "+ pi*n")
         result += 1
         
 def _Parabola_(x):
