@@ -1,15 +1,5 @@
 import math
 
-func = input('Введите функцию ')
-
-a = input('Введите левую границу')
-
-b = input('Введите правую границу')
-
-a = int(a)
-
-b = int(b)
-
 result = 0
 
 def _cos_(x):
@@ -30,14 +20,14 @@ def _tg_(x):
     global result
     deterivative = (tg(x + 0.000001) - tg(x)) / 0.000001
     if 0 < deterivative < 0.001:
-        print('Функция имеет экстремум в точке =', x ,"+ pi*n")
+        print('Функция имеет экстремум в точке =', x ,"+ 2*pi*n")
         result += 1
 
 def _ctg_(x):
     global result
     deterivative = (ctg(x + 0.000001) - ctg(x)) / 0.000001
     if 0 < deterivative < 0.001:
-        print('Функция имеет экстремум в точке =', x , "+ pi*n")
+        print('Функция имеет экстремум в точке =', x , "+ 2*pi*n")
         result += 1
         
 def _Parabola_(x):
@@ -52,14 +42,18 @@ def _Line_(x):
     deterivative = (((x + 0.000001) * a + b) - (x * a + b)) / 0.000001
     if 0 < deterivative < 0.001:
         print('Функция имеет экстремум в точке =', x)
+        global result
         result += 1
 
 def Extremum(func, a, b):
-    global result
     for x in range(a, b + 1):
         func(x)
+        print(x)
+    global result
     if result == 0:
         return None
+        print('None')
 
+Extremum(_cos_, -3, 3)
 
-Extremum(func, a, b)
+print(result)
